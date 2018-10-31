@@ -3,17 +3,23 @@ package com.example.julietoh.expressionpractice;
 import android.Manifest;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.SurfaceView;
 
+import com.affectiva.android.affdex.sdk.Frame;
 import com.affectiva.android.affdex.sdk.detector.CameraDetector;
 import com.affectiva.android.affdex.sdk.detector.Detector;
+import com.affectiva.android.affdex.sdk.detector.Face;
 
-public class MainActivity extends AppCompatActivity implements Detector.FaceListener {
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity implements Detector.FaceListener, Detector.ImageListener {
     private static final int CAMERA_PERMISSIONS_REQUEST = 42;  //value is arbitrary (between 0 and 255)
     boolean cameraPermissionsAvailable = false;
     boolean isFrontFacingCameraDetected = false;
@@ -93,9 +99,48 @@ public class MainActivity extends AppCompatActivity implements Detector.FaceList
         detector.setMaxProcessRate(rate);
         detector.setSendUnprocessedFrames(true);
         detector.setFaceListener(this);
-        // detector.setImageListener(this);
+        detector.setImageListener(this);
+        detector.setDetectAllExpressions(true);
+        detector.setDetectAllEmotions(true);
         // detector.setOnCameraEventListener(this);
     }
+
+    @Override
+    public void onImageResults(List<Face> faces, Frame image, float timestamp) {
+        //The follow code sample shows an example of how to retrieve metric values from the Face object
+        if (faces == null)
+            return; //frame was not processed
+
+        if (faces.size() == 0)
+            return; //no face found
+
+        Face face = faces.get(0);
+        int faceId = face.getId();
+
+        //Get Emotions
+        float joy = face.emotions.getJoy();
+        float anger = face.emotions.getAnger();
+        float disgust = face.emotions.getDisgust();
+
+        //Some Expressions
+        float smile = face.expressions.getSmile();
+        float brow_furrow = face.expressions.getBrowFurrow();
+        float brow_raise = face.expressions.getBrowRaise();
+
+        // For testing purposes
+        if (joy != 0.0 || anger != 0.0 || disgust != 0.0 || brow_raise != 0.0) {
+            AlertDialog.Builder builder;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                builder = new AlertDialog.Builder(this, android.R.style.Theme_Material_Dialog_Alert);
+            } else {
+                builder = new AlertDialog.Builder(this);
+            }
+            builder.setTitle("EMOTION DETECTED");
+            builder.show();
+        }
+
+    }
+
 
     void initializeUI() {
         cameraView = findViewById(R.id.camera_view);
