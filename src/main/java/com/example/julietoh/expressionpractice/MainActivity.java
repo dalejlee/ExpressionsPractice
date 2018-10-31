@@ -8,18 +8,18 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.TextView;
+import android.view.SurfaceView;
 
 import com.affectiva.android.affdex.sdk.detector.CameraDetector;
 import com.affectiva.android.affdex.sdk.detector.Detector;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements Detector.FaceListener {
     private static final int CAMERA_PERMISSIONS_REQUEST = 42;  //value is arbitrary (between 0 and 255)
     boolean cameraPermissionsAvailable = false;
     boolean isFrontFacingCameraDetected = false;
     private CameraDetector detector = null;
     CameraDetector.CameraType cameraType;
+    private SurfaceView cameraView; //SurfaceView used to display camera images
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         checkForCameraPermissions();
         determineCameraAvailability();
+        initializeUI();
         initializeCameraDetector();
+        detector.start();
     }
 
     /**
@@ -86,11 +88,26 @@ public class MainActivity extends AppCompatActivity {
          * the camera. If a SurfaceView is passed in as the last argument to the constructor,
          * that view will be painted with what the camera sees.
          */
-        detector = new CameraDetector(this, cameraType, cameraView, (multiFaceModeEnabled ? MAX_SUPPORTED_FACES : 1), Detector.FaceDetectorMode.LARGE_FACES);
-        detector.setImageListener(this);
+        detector = new CameraDetector(this, cameraType, cameraView, 1, Detector.FaceDetectorMode.LARGE_FACES);
+        int rate = 10;
+        detector.setMaxProcessRate(rate);
+        detector.setSendUnprocessedFrames(true);
         detector.setFaceListener(this);
-        detector.setOnCameraEventListener(this);
+        // detector.setImageListener(this);
+        // detector.setOnCameraEventListener(this);
     }
 
+    void initializeUI() {
+        cameraView = findViewById(R.id.camera_view);
+    }
+
+    @Override
+    public void onFaceDetectionStarted() {
+
+    }
+
+    @Override
+    public void onFaceDetectionStopped() {
+    }
 
 }
