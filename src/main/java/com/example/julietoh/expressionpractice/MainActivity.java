@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity implements Detector.FaceList
             builder.setTitle("EMOTION DETECTED");
             builder.show();
             detector.stop();
-            Intent intent = new Intent(this, ResultActivity.class);
+            Intent intent = new Intent(this, ScoreActivity.class);
             startActivity(intent);
         }
 

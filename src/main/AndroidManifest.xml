@@ -24,6 +24,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ResultActivity"> </activity>
+        <activity android:name=".ScoreActivity"> </activity>
     </application>
 
 </manifest>
