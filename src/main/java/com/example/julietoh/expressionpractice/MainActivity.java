@@ -1,7 +1,6 @@
 package com.example.julietoh.expressionpractice;
 
 import android.Manifest;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -129,18 +128,20 @@ public class MainActivity extends AppCompatActivity implements Detector.FaceList
         float brow_raise = face.expressions.getBrowRaise();
 
         // For testing purposes
-        if (joy > 0.0) {
+        if (joy + anger + disgust > 0) {
             AlertDialog.Builder builder;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 builder = new AlertDialog.Builder(this, android.R.style.Theme_Material_Dialog_Alert);
             } else {
                 builder = new AlertDialog.Builder(this);
             }
-            builder.setTitle("EMOTION DETECTED");
+            builder.setMessage("Joy : " + Float.toString(joy) + "\n " +
+                    "Anger : " + Float.toString(anger) + "\n " +
+                    "Disgust: " + Float.toString(disgust));
             builder.show();
-            detector.stop();
-            Intent intent = new Intent(this, ScoreActivity.class);
-            startActivity(intent);
+            //detector.stop();
+//            Intent intent = new Intent(this, ScoreActivity.class);
+//            startActivity(intent);
         }
 
     }
