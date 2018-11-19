@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ExpressionPractice</string>
+    <string name="emotions_values">
+        Joy : %1$f
+        \nAnger : %2$f
+        \nDisgust: %3$f
+        \nFear : %4$f
+        \nSadness: %5$f</string>
 </resources>

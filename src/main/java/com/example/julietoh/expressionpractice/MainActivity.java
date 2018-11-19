@@ -3,15 +3,14 @@ package com.example.julietoh.expressionpractice;
 import android.Manifest;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.SurfaceView;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.affectiva.android.affdex.sdk.Frame;
 import com.affectiva.android.affdex.sdk.detector.CameraDetector;
@@ -29,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements Detector.FaceList
     private CameraDetector detector = null;
     CameraDetector.CameraType cameraType;
     private SurfaceView cameraView; //SurfaceView used to display camera images
+    private TextView emotionTextView; // Used for just testing for now
 
     // Variables for question
     private int mQuestionNumber = 0;
@@ -140,6 +140,8 @@ public class MainActivity extends AppCompatActivity implements Detector.FaceList
         float joy = face.emotions.getJoy();
         float anger = face.emotions.getAnger();
         float disgust = face.emotions.getDisgust();
+        float fear = face.emotions.getFear();
+        float sadness = face.emotions.getSadness();
 
         //Some Expressions
         float smile = face.expressions.getSmile();
@@ -147,21 +149,18 @@ public class MainActivity extends AppCompatActivity implements Detector.FaceList
         float brow_raise = face.expressions.getBrowRaise();
 
         // For testing purposes
-        if (joy + anger + disgust > 0) {
-            AlertDialog.Builder builder;
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                builder = new AlertDialog.Builder(this, android.R.style.Theme_Material_Dialog_Alert);
-            } else {
-                builder = new AlertDialog.Builder(this);
-            }
-            builder.setMessage("Joy : " + Float.toString(joy) + "\n " +
-                    "Anger : " + Float.toString(anger) + "\n " +
-                    "Disgust: " + Float.toString(disgust));
-            builder.show();
+        String displayString = getString(R.string.emotions_values,
+                joy,
+                anger,
+                disgust,
+                fear,
+                sadness);
+
+        emotionTextView.setText(displayString);
             //detector.stop();
 //            Intent intent = new Intent(this, ScoreActivity.class);
 //            startActivity(intent);
-        }
+
 
     }
 
@@ -169,6 +168,7 @@ public class MainActivity extends AppCompatActivity implements Detector.FaceList
     void initializeUI() {
         cameraView = findViewById(R.id.camera_view);
         questionImageView = findViewById(R.id.question_image);
+        emotionTextView = findViewById(R.id.emotion_textview);
     }
 
     @Override
