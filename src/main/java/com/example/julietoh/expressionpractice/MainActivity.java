@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements Detector.FaceList
     CameraDetector.CameraType cameraType;
     private SurfaceView cameraView; //SurfaceView used to display camera images
     private TextView emotionTextView; // Used for just testing for now
+    //test
 
     // Variables for question
     private int mQuestionNumber = 0;
