@@ -8,7 +8,7 @@ import android.content.res.TypedArray;
  */
 
 public class QuestionsLibrary {
-    private String[] mCorrectAnswer = {"happy"};
+    private String[] mCorrectAnswer = {"happy", "sad"};
     private TypedArray mImageLibrary;
 
     public QuestionsLibrary(Context context) {

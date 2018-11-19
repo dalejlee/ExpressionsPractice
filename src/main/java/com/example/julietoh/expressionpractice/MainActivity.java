@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.SurfaceView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.affectiva.android.affdex.sdk.Frame;
 import com.affectiva.android.affdex.sdk.detector.CameraDetector;
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements Detector.FaceList
     private int mScore = 0;
     private QuestionsLibrary mQuestionsLibrary;
     private ImageView questionImageView;
+    private String mCorrectAnswer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements Detector.FaceList
      */
     private void updateQuestion() {
         questionImageView.setBackgroundResource(mQuestionsLibrary.getQuestion(mQuestionNumber));
+        mCorrectAnswer = mQuestionsLibrary.getCorrectAnswer(mQuestionNumber);
         mQuestionNumber++;
     }
 
@@ -157,10 +160,22 @@ public class MainActivity extends AppCompatActivity implements Detector.FaceList
                 sadness);
 
         emotionTextView.setText(displayString);
-            //detector.stop();
-//            Intent intent = new Intent(this, ScoreActivity.class);
-//            startActivity(intent);
 
+        // Check for correct emotion
+        switch(mCorrectAnswer) {
+            case "happy":
+                if (joy > 10) {
+                    // Mostly for testing
+                    Toast.makeText(this,"Correct!",
+                            Toast.LENGTH_SHORT).show();
+                }
+                updateQuestion();
+                break;
+        }
+
+        // detector.stop();
+        // Intent intent = new Intent(this, ScoreActivity.class);
+        // startActivity(intent);
 
     }
 
