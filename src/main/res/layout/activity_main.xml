@@ -18,11 +18,11 @@
         android:orientation="vertical"
         android:background="@android:color/holo_blue_dark">
 
-        <TextView
+        <ImageView
+            android:id="@+id/question_image"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Imitate this"/>
+            android:gravity="center" />
     </LinearLayout>
 
 </RelativeLayout>

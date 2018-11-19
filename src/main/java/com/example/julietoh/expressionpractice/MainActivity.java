@@ -11,6 +11,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.SurfaceView;
+import android.widget.ImageView;
 
 import com.affectiva.android.affdex.sdk.Frame;
 import com.affectiva.android.affdex.sdk.detector.CameraDetector;
@@ -20,6 +21,8 @@ import com.affectiva.android.affdex.sdk.detector.Face;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements Detector.FaceListener, Detector.ImageListener {
+
+    // Variables for checking emotion
     private static final int CAMERA_PERMISSIONS_REQUEST = 42;  //value is arbitrary (between 0 and 255)
     boolean cameraPermissionsAvailable = false;
     boolean isFrontFacingCameraDetected = false;
@@ -27,15 +30,31 @@ public class MainActivity extends AppCompatActivity implements Detector.FaceList
     CameraDetector.CameraType cameraType;
     private SurfaceView cameraView; //SurfaceView used to display camera images
 
+    // Variables for question
+    private int mQuestionNumber = 0;
+    private int mScore = 0;
+    private QuestionsLibrary mQuestionsLibrary;
+    private ImageView questionImageView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        initializeUI();
+        mQuestionsLibrary = new QuestionsLibrary(this);
+        updateQuestion();
         checkForCameraPermissions();
         determineCameraAvailability();
-        initializeUI();
         initializeCameraDetector();
         detector.start();
+    }
+
+    /**
+     * Displays next question
+     */
+    private void updateQuestion() {
+        questionImageView.setBackgroundResource(mQuestionsLibrary.getQuestion(mQuestionNumber));
+        mQuestionNumber++;
     }
 
     /**
@@ -149,6 +168,7 @@ public class MainActivity extends AppCompatActivity implements Detector.FaceList
 
     void initializeUI() {
         cameraView = findViewById(R.id.camera_view);
+        questionImageView = findViewById(R.id.question_image);
     }
 
     @Override
