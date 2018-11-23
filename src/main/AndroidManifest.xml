@@ -25,6 +25,7 @@
         </activity>
         <activity android:name=".ResultActivity"> </activity>
         <activity android:name=".ScoreActivity"> </activity>
+        <activity android:name=".StartScreen"> </activity>
     </application>
 
 </manifest>
