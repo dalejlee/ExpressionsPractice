@@ -12,6 +12,7 @@ import android.view.SurfaceView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.util.Timer;
 
 import com.affectiva.android.affdex.sdk.Frame;
 import com.affectiva.android.affdex.sdk.detector.CameraDetector;
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements Detector.FaceList
         checkForCameraPermissions();
         determineCameraAvailability();
         initializeCameraDetector();
+        Timer timer = new Timer();
         detector.start();
     }
 
@@ -166,8 +168,8 @@ public class MainActivity extends AppCompatActivity implements Detector.FaceList
             case "happy":
                 if (joy > 10) {
                     // Mostly for testing
-                    Toast.makeText(this,"Correct!",
-                            Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(this,"Correct!",
+//                            Toast.LENGTH_SHORT).show();
                 }
                 updateQuestion();
                 break;
