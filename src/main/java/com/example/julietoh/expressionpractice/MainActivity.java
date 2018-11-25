@@ -56,7 +56,6 @@ public class MainActivity extends AppCompatActivity implements Detector.FaceList
      */
     private void updateQuestion() {
         questionImageView.setBackgroundResource(mQuestionsLibrary.getQuestion(mQuestionNumber));
-        mCorrectAnswer = mQuestionsLibrary.getCorrectAnswer(mQuestionNumber);
         mQuestionNumber++;
     }
 

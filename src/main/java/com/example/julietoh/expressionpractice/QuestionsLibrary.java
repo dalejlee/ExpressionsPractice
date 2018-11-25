@@ -8,7 +8,7 @@ import android.content.res.TypedArray;
  */
 
 public class QuestionsLibrary {
-    private String[] mCorrectAnswer = {"happy", "sad"};
+    private String[] mCorrectAnswer = {"happy", "sad", "anger", "anger", "anger"};
     private TypedArray mImageLibrary;
 
     public QuestionsLibrary(Context context) {
@@ -22,6 +22,11 @@ public class QuestionsLibrary {
     public int getQuestion(int questionNumber) {
         return mImageLibrary.getResourceId(questionNumber, 0);
     }
+
+//    public String getItemName(int questionNumber) {
+//        int imageid = mImageLibrary.getResourceId(questionNumber, 0);
+//        return this.getResources().getResourceName(imageid);
+//    }
 
     /**
      * Returns the correct answer to the question
