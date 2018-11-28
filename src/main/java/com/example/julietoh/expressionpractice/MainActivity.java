@@ -1,6 +1,7 @@
 package com.example.julietoh.expressionpractice;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -8,10 +9,11 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.view.SurfaceView;
 import android.widget.ImageView;
 import android.widget.TextView;
-import java.util.Timer;
+import android.widget.Toast;
 
 import com.affectiva.android.affdex.sdk.Frame;
 import com.affectiva.android.affdex.sdk.detector.CameraDetector;
@@ -19,6 +21,7 @@ import com.affectiva.android.affdex.sdk.detector.Detector;
 import com.affectiva.android.affdex.sdk.detector.Face;
 
 import java.util.List;
+import java.util.Timer;
 
 public class MainActivity extends AppCompatActivity implements Detector.FaceListener, Detector.ImageListener {
 
@@ -44,19 +47,20 @@ public class MainActivity extends AppCompatActivity implements Detector.FaceList
         setContentView(R.layout.activity_main);
         initializeUI();
         mQuestionsLibrary = new QuestionsLibrary(this);
-        updateQuestion();
         checkForCameraPermissions();
         determineCameraAvailability();
         initializeCameraDetector();
+        updateQuestion();
         Timer timer = new Timer();
-        detector.start();
     }
 
     /**
      * Displays next question
      */
     private void updateQuestion() {
+        detector.start();
         questionImageView.setBackgroundResource(mQuestionsLibrary.getQuestion(mQuestionNumber));
+        mCorrectAnswer = mQuestionsLibrary.getCorrectAnswer(mQuestionNumber);
         mQuestionNumber++;
     }
 
@@ -145,11 +149,13 @@ public class MainActivity extends AppCompatActivity implements Detector.FaceList
         float disgust = face.emotions.getDisgust();
         float fear = face.emotions.getFear();
         float sadness = face.emotions.getSadness();
+        float surprise = face.emotions.getSurprise();
 
         //Some Expressions
         float smile = face.expressions.getSmile();
         float brow_furrow = face.expressions.getBrowFurrow();
         float brow_raise = face.expressions.getBrowRaise();
+        float lips_downturned = face.expressions.getLipCornerDepressor();
 
         // For testing purposes
         String displayString = getString(R.string.emotions_values,
@@ -158,25 +164,58 @@ public class MainActivity extends AppCompatActivity implements Detector.FaceList
                 disgust,
                 fear,
                 sadness);
-
-        emotionTextView.setText(displayString);
+        //emotionTextView.setText(displayString);
 
         // Check for correct emotion
         switch(mCorrectAnswer) {
             case "happy":
-                if (joy > 10) {
-                    // Mostly for testing
-//                    Toast.makeText(this,"Correct!",
-//                            Toast.LENGTH_SHORT).show();
+                if (joy > 95 && smile > 90 && disgust < 1 && anger < 1) {
+                    Toast toast = Toast.makeText(this,"Correct! Expression is happy.",
+                            Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.TOP, 0, 0);
+                    toast.show();
+                    detector.stop();
+                    updateQuestion();
+                    break;
                 }
-                updateQuestion();
-                break;
+            case "sad":
+                if ((sadness > 20 && joy < 10) || (disgust > 50  && joy < 10)) {
+                    Toast toast = Toast.makeText(this,"Correct! Expression is sad.",
+                            Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.TOP, 0, 0);
+                    toast.show();
+                    detector.stop();
+                    updateQuestion();
+                    break;
+                }
+            case "surprise":
+                if (surprise > 20) {
+                    Toast toast = Toast.makeText(this,"Correct! Expression is surprise.",
+                            Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.TOP, 0, 0);
+                    toast.show();
+                    detector.stop();
+                    updateQuestion();
+                    break;
+                }
+            case "anger":
+                if (anger > 20  && joy < 10 ) {
+                    Toast toast = Toast.makeText(this,"Correct! Expression is anger.",
+                            Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.TOP, 0, 0);
+                    toast.show();
+                    detector.stop();
+                    updateQuestion();
+                    break;
+                }
         }
 
-        // detector.stop();
-        // Intent intent = new Intent(this, ScoreActivity.class);
-        // startActivity(intent);
-
+        // Reached last question
+        if (mQuestionNumber == 62) {
+            detector.stop();
+            Intent intent = new Intent(this, StartActivity.class);
+            startActivity(intent);
+        }
     }
 
 

@@ -1,89 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <integer-array name="QuestionImages">
-        <item>@drawable/anger_1</item>
-        <item>@drawable/anger_2</item>
-        <item>@drawable/anger_3</item>
         <item>@drawable/anger_4</item>
-        <item>@drawable/anger_5</item>
-        <item>@drawable/anger_5</item>
-        <item>@drawable/anger_7</item>
-        <item>@drawable/anger_8</item>
-        <item>@drawable/anger_9</item>
         <item>@drawable/happy_01</item>
-        <item>@drawable/happy_2</item>
-        <item>@drawable/happy_3</item>
-        <item>@drawable/happy_4</item>
-        <item>@drawable/happy_5</item>
-        <item>@drawable/happy_6</item>
-        <item>@drawable/happy_7</item>
-        <item>@drawable/happy_8</item>
-        <item>@drawable/happy_9</item>
-        <item>@drawable/happy_10</item>
-        <item>@drawable/happy_11</item>
-        <item>@drawable/happy_12</item>
-        <item>@drawable/happy_13</item>
-        <item>@drawable/happy_14</item>
-        <item>@drawable/happy_15</item>
-        <item>@drawable/happy_16</item>
-        <item>@drawable/happy_17</item>
-        <item>@drawable/happy_18</item>
-        <item>@drawable/happy_19</item>
-        <item>@drawable/happy_20</item>
-        <item>@drawable/happy_21</item>
-        <item>@drawable/happy_22</item>
-        <item>@drawable/happy_23</item>
-        <item>@drawable/happy_24</item>
-        <item>@drawable/happy_25</item>
-        <item>@drawable/happy_26</item>
-        <item>@drawable/happy_27</item>
-        <item>@drawable/happy_28</item>
         <item>@drawable/sad_01</item>
-        <item>@drawable/sad_2</item>
-        <item>@drawable/sad_3</item>
-        <item>@drawable/sad_4</item>
-        <item>@drawable/sad_5</item>
-        <item>@drawable/sad_6</item>
-        <item>@drawable/sad_7</item>
-        <item>@drawable/sad_8</item>
-        <item>@drawable/sad_9</item>
-        <item>@drawable/sad_10</item>
-        <item>@drawable/sad_11</item>
-        <item>@drawable/sad_12</item>
-        <item>@drawable/sad_13</item>
-        <item>@drawable/sad_14</item>
-        <item>@drawable/sad_15</item>
-        <item>@drawable/sad_16</item>
-        <item>@drawable/sad_17</item>
-        <item>@drawable/sad_18</item>
         <item>@drawable/surprise_1</item>
-        <item>@drawable/surprise_2</item>
-        <item>@drawable/surprise_3</item>
-        <item>@drawable/surprise_4</item>
-        <item>@drawable/surprise_5</item>
-        <item>@drawable/surprise_6</item>
-        <item>@drawable/surprise_7</item>
-        <item>@drawable/surprise_8</item>
-        <item>@drawable/surprise_9</item>
+        <item>@drawable/happy_10</item>
         <item>@drawable/surprise_10</item>
-        <item>@drawable/surprise_11</item>
-        <item>@drawable/surprise_12</item>
-        <item>@drawable/surprise_13</item>
-        <item>@drawable/surprise_14</item>
-        <item>@drawable/surprise_15</item>
-        <item>@drawable/surprise_16</item>
-        <item>@drawable/surprise_17</item>
-        <item>@drawable/surprise_18</item>
-        <item>@drawable/surprise_19</item>
-        <item>@drawable/surprise_20</item>
-        <item>@drawable/anger_1</item>
+        <item>@drawable/sad_10</item>
+
+        <item>@drawable/happy_2</item>
         <item>@drawable/anger_2</item>
+        <item>@drawable/sad_11</item>
+        <item>@drawable/surprise_2</item>
+        <item>@drawable/sad_2</item>
+        <item>@drawable/surprise_11</item>
+        <item>@drawable/happy_11</item>
+
+        <item>@drawable/surprise_12</item>
+        <item>@drawable/sad_3</item>
         <item>@drawable/anger_3</item>
+        <item>@drawable/happy_12</item>
+        <item>@drawable/sad_12</item>
+        <item>@drawable/happy_3</item>
+        <item>@drawable/surprise_3</item>
+
+        <item>@drawable/sad_13</item>
         <item>@drawable/anger_4</item>
+        <item>@drawable/surprise_13</item>
+        <item>@drawable/happy_4</item>
+        <item>@drawable/surprise_4</item>
+        <item>@drawable/sad_4</item>
+        <item>@drawable/happy_13</item>
+
         <item>@drawable/anger_5</item>
-        <item>@drawable/anger_5</item>
+        <item>@drawable/sad_5</item>
+        <item>@drawable/sad_14</item>
+        <item>@drawable/happy_5</item>
+        <item>@drawable/surprise_14</item>
+        <item>@drawable/surprise_5</item>
+        <item>@drawable/happy_14</item>
+
+        <item>@drawable/happy_6</item>
+        <item>@drawable/surprise_6</item>
+        <item>@drawable/sad_15</item>
+        <item>@drawable/happy_15</item>
+        <item>@drawable/anger_6</item>
+        <item>@drawable/surprise_15</item>
+        <item>@drawable/sad_6</item>
+
+        <item>@drawable/surprise_7</item>
+        <item>@drawable/sad_7</item>
+        <item>@drawable/happy_16</item>
         <item>@drawable/anger_7</item>
+        <item>@drawable/sad_16</item>
+        <item>@drawable/happy_7</item>
+        <item>@drawable/surprise_16</item>
+
+        <item>@drawable/happy_8</item>
+        <item>@drawable/happy_17</item>
+        <item>@drawable/sad_8</item>
         <item>@drawable/anger_8</item>
+        <item>@drawable/surprise_17</item>
+        <item>@drawable/sad_17</item>
+        <item>@drawable/surprise_8</item>
+
+        <item>@drawable/sad_18</item>
+        <item>@drawable/surprise_18</item>
         <item>@drawable/anger_9</item>
+        <item>@drawable/happy_18</item>
+        <item>@drawable/happy_9</item>
+        <item>@drawable/sad_9</item>
+        <item>@drawable/surprise_9</item>
+
+        <!--<item>@drawable/happy_19</item>-->
+        <!--<item>@drawable/happy_20</item>-->
+        <!--<item>@drawable/happy_21</item>-->
+        <!--<item>@drawable/happy_22</item>-->
+        <!--<item>@drawable/happy_23</item>-->
+        <!--<item>@drawable/happy_24</item>-->
+        <!--<item>@drawable/happy_25</item>-->
+        <!--<item>@drawable/happy_26</item>-->
+        <!--<item>@drawable/happy_27</item>-->
+        <!--<item>@drawable/happy_28</item>-->
+        <!--<item>@drawable/surprise_19</item>-->
+        <!--<item>@drawable/surprise_20</item>-->
     </integer-array>
 </resources>

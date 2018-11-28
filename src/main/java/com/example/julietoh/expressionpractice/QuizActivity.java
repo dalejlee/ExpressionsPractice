@@ -2,10 +2,6 @@ package com.example.julietoh.expressionpractice;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -13,7 +9,6 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.content.res.TypedArray;
 
 
 public class QuizActivity extends AppCompatActivity {
@@ -119,11 +114,11 @@ public class QuizActivity extends AppCompatActivity {
 
 
 //            textViewQuestionCount.setText("Question: " + questionCounter + "/" + questionCountTotal);
-            answered = false;
-            buttonConfirmNext.setText("Confirm");
+        answered = false;
+        buttonConfirmNext.setText("Confirm");
 //        } else {
 //            finishQuiz();
-        }
+    }
 
     private void checkAnswer() {
         answered = true;
@@ -132,13 +127,13 @@ public class QuizActivity extends AppCompatActivity {
         int answerNr = rbGroup.indexOfChild(rbSelected) + 1;
         String answr = "";
         if (answerNr == 1) {
-            answr = "angry";
+            answr = "anger";
         }
         if (answerNr == 2) {
             answr = "fearful";
         }
         if (answerNr == 3) {
-            answr = "surprised";
+            answr = "surprise";
         }
         if (answerNr == 4) {
             answr = "sad";
@@ -183,7 +178,7 @@ public class QuizActivity extends AppCompatActivity {
 //        }
 
 //        if (questionCounter < questionCountTotal) {
-            buttonConfirmNext.setText("Next");
+        buttonConfirmNext.setText("Next");
 //        } else {
 //            buttonConfirmNext.setText("Finish");
 //        }
