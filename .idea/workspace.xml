@@ -11,26 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f99d154-aa74-4e32-9916-007c0662c5ad" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/julietoh/expressionpractice/question.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExpressionsPractice.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ExpressionsPractice.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/julietoh/expressionpractice/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/julietoh/expressionpractice/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/julietoh/expressionpractice/QuestionsLibrary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/julietoh/expressionpractice/QuestionsLibrary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/julietoh/expressionpractice/QuizActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/julietoh/expressionpractice/QuizActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_quiz.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_quiz.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/values/drawableArray.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/drawableArray.xml" afterDir="false" />
-    </list>
+    <list default="true" id="7f99d154-aa74-4e32-9916-007c0662c5ad" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -138,7 +119,7 @@
           <file leaf-file-name="activity_quiz.xml" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_quiz.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="594">
+                <state relative-caret-position="186">
                   <caret line="52" selection-start-line="52" selection-end-line="52" />
                 </state>
               </provider>
@@ -1318,10 +1299,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-338" />
-    <option name="y" value="-1177" />
-    <option name="width" value="1862" />
-    <option name="height" value="1177" />
+    <option name="x" value="-140" />
+    <option name="y" value="-978" />
+    <option name="width" value="1280" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -1609,7 +1590,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-338" y="-1177" width="1862" height="1177" extended-state="0" />
+    <frame x="-140" y="-978" width="1280" height="735" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="7" />
@@ -1619,15 +1600,15 @@
       <window_info id="Build Variants" order="2" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.19279128" side_tool="true" weight="0.32967034" />
-      <window_info active="true" anchor="right" id="Preview" order="3" visible="true" weight="0.20714286" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8072087" visible="true" weight="0.0" />
+      <window_info active="true" anchor="right" id="Preview" order="3" visible="true" weight="0.30452344" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8072087" weight="0.0" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4995809" weight="0.3291536" />
       <window_info anchor="bottom" id="Logcat" order="7" />
       <window_info id="Captures" order="2" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.01978022" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.02907916" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.03888889" />
       <window_info anchor="right" id="Gradle" order="3" weight="0.19065934" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -1925,7 +1906,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_quiz.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
+        <state relative-caret-position="186">
           <caret line="52" selection-start-line="52" selection-end-line="52" />
         </state>
       </provider>
