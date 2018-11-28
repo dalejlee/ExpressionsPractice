@@ -1,11 +1,8 @@
 package com.example.julietoh.expressionpractice;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.content.res.ColorStateList;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -13,7 +10,6 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.content.res.TypedArray;
 
 
 public class QuizActivity extends AppCompatActivity {
@@ -106,17 +102,12 @@ public class QuizActivity extends AppCompatActivity {
 //            rb3.setText(currentQuestion.getOption3());
 
         questionImageView.setBackgroundResource(mQuestionsLibrary.getQuestion(mQuestionNumber));
-//        questionImageView.setBackgroundResource(R.drawable.anger_2);
-
         mCorrectAnswer = mQuestionsLibrary.getCorrectAnswer(mQuestionNumber);
         mQuestionNumber++;
         questionCounter++;
 
         Toast.makeText(this, mCorrectAnswer,
                 Toast.LENGTH_SHORT).show();
-
-
-
 
 //            textViewQuestionCount.setText("Question: " + questionCounter + "/" + questionCountTotal);
             answered = false;
@@ -132,13 +123,13 @@ public class QuizActivity extends AppCompatActivity {
         int answerNr = rbGroup.indexOfChild(rbSelected) + 1;
         String answr = "";
         if (answerNr == 1) {
-            answr = "angry";
+            answr = "anger";
         }
         if (answerNr == 2) {
             answr = "fearful";
         }
         if (answerNr == 3) {
-            answr = "surprised";
+            answr = "surprise";
         }
         if (answerNr == 4) {
             answr = "sad";
@@ -155,19 +146,18 @@ public class QuizActivity extends AppCompatActivity {
             String scr = "Score: " + score;
             textViewScore.setText(scr);
         }
-
         showSolution();
     }
 
     private void showSolution() {
-//        rb1.setTextColor(Color.RED);
-//        rb2.setTextColor(Color.RED);
-//        rb3.setTextColor(Color.RED);
+        rb1.setTextColor(Color.RED);
+        rb2.setTextColor(Color.RED);
+        rb3.setTextColor(Color.RED);
 
         String ans = "Answer is " + mCorrectAnswer;
         textViewAnswer.setText(ans);
 //        switch (currentQuestion.getAnswerNr()) {
-
+//
 //            case 1:
 //                rb1.setTextColor(Color.GREEN);
 //                textViewAnswer.setText("Answer is happy");
@@ -182,11 +172,11 @@ public class QuizActivity extends AppCompatActivity {
 //                break;
 //        }
 
-//        if (questionCounter < questionCountTotal) {
+        if (questionCounter < questionCountTotal) {
             buttonConfirmNext.setText("Next");
-//        } else {
-//            buttonConfirmNext.setText("Finish");
-//        }
+        } else {
+            buttonConfirmNext.setText("Finish");
+        }
     }
 
     private void finishQuiz() {
