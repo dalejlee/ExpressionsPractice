@@ -25,8 +25,8 @@ allprojects {
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    compileSdkVersion 26 // tried changing to 21
+    buildToolsVersion "26.0.1" // tried changing to 21.0.1
     defaultConfig {
         applicationId "com.example.julietoh.expressionpractice"
         minSdkVersion 16
@@ -40,6 +40,13 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+}
+
+// added this to disable lint
+android {
+    lintOptions {
+        abortOnError false
     }
 }
 

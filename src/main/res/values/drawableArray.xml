@@ -76,5 +76,14 @@
         <item>@drawable/surprise_18</item>
         <item>@drawable/surprise_19</item>
         <item>@drawable/surprise_20</item>
+        <item>@drawable/anger_1</item>
+        <item>@drawable/anger_2</item>
+        <item>@drawable/anger_3</item>
+        <item>@drawable/anger_4</item>
+        <item>@drawable/anger_5</item>
+        <item>@drawable/anger_5</item>
+        <item>@drawable/anger_7</item>
+        <item>@drawable/anger_8</item>
+        <item>@drawable/anger_9</item>
     </integer-array>
 </resources>
