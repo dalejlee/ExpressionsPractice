@@ -13,6 +13,8 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.SurfaceView;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,7 +25,6 @@ import com.affectiva.android.affdex.sdk.detector.Detector;
 import com.affectiva.android.affdex.sdk.detector.Face;
 
 import java.util.List;
-import java.util.Timer;
 
 public class MainActivity extends AppCompatActivity implements Detector.FaceListener, Detector.ImageListener {
 
@@ -34,7 +35,8 @@ public class MainActivity extends AppCompatActivity implements Detector.FaceList
     private CameraDetector detector = null;
     CameraDetector.CameraType cameraType;
     private SurfaceView cameraView; //SurfaceView used to display camera images
-    private TextView emotionTextView; // Used for just testing for now
+    private Button skipButton;
+    private TextView score_text;
 
     // Variables for question
     private int mQuestionNumber = 0;
@@ -77,10 +79,18 @@ public class MainActivity extends AppCompatActivity implements Detector.FaceList
      * Displays next question
      */
     private void updateQuestion() {
+        if (mQuestionNumber == 36) {
+            detector.stop();
+            Intent intent = new Intent(this, ScoreActivity.class);
+            intent.putExtra("SCORE", mScore);
+            startActivity(intent);
+        }
+        score_text.setText("Score " + mScore + "/36");
         detector.reset();
         questionImageView.setBackgroundResource(mQuestionsLibrary.getQuestion(mQuestionNumber));
         mCorrectAnswer = mQuestionsLibrary.getCorrectAnswer(mQuestionNumber);
         mQuestionNumber++;
+        // Reached last question
     }
 
     /**
@@ -108,7 +118,6 @@ public class MainActivity extends AppCompatActivity implements Detector.FaceList
 
         if (!cameraPermissionsAvailable) {
             if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA)) {
-
                 // Show an explanation to the user *asynchronously* -- don't block
                 // this thread waiting for the user's response! After the user
                 // sees the explanation, try again to request the permission.
@@ -218,20 +227,18 @@ public class MainActivity extends AppCompatActivity implements Detector.FaceList
                 }
                 break;
         }
-
-
-        // Reached last question
-        if (mQuestionNumber == 62) {
-            detector.stop();
-            Intent intent = new Intent(this, StartActivity.class);
-            startActivity(intent);
-        }
     }
     
     void initializeUI() {
         cameraView = findViewById(R.id.camera_view);
         questionImageView = findViewById(R.id.question_image);
-        emotionTextView = findViewById(R.id.emotion_textview);
+        skipButton = findViewById(R.id.skip_button);
+        skipButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                updateQuestion();
+            }
+        });
+        score_text = findViewById(R.id.score_text);
     }
 
     @Override
