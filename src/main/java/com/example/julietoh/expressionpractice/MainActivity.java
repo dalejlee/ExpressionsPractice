@@ -90,8 +90,6 @@ public class MainActivity extends AppCompatActivity implements Detector.FaceList
                         Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED;
 
         if (!cameraPermissionsAvailable) {
-
-            // Should we show an explanation?
             if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA)) {
 
                 // Show an explanation to the user *asynchronously* -- don't block
@@ -219,8 +217,7 @@ public class MainActivity extends AppCompatActivity implements Detector.FaceList
             startActivity(intent);
         }
     }
-
-
+    
     void initializeUI() {
         cameraView = findViewById(R.id.camera_view);
         questionImageView = findViewById(R.id.question_image);
