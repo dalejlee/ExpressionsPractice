@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <integer-array name="QuestionImages">
-        <item>@drawable/anger_4</item>
+        <item>@drawable/anger_1</item>
         <item>@drawable/happy_01</item>
         <item>@drawable/sad_01</item>
         <item>@drawable/surprise_1</item>
