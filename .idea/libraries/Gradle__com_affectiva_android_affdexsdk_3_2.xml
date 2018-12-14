@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: com.affectiva.android:affdexsdk-3.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/256d86c2f8ab33ed4047fce8248d2d6fb220375a/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/256d86c2f8ab33ed4047fce8248d2d6fb220375a/output/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
