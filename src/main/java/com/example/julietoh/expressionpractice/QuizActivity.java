@@ -109,8 +109,8 @@ public class QuizActivity extends AppCompatActivity {
         mQuestionNumber++;
         questionCounter++;
 
-        Toast.makeText(this, mCorrectAnswer,
-                Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, mCorrectAnswer,
+//                Toast.LENGTH_SHORT).show();
 
 
 
@@ -124,7 +124,7 @@ public class QuizActivity extends AppCompatActivity {
 
     private void checkAnswer() {
         answered = true;
-
+        boolean correctAnswer = false;
         RadioButton rbSelected = findViewById(rbGroup.getCheckedRadioButtonId());
         int answerNr = rbGroup.indexOfChild(rbSelected) + 1;
         String answr = "";
@@ -151,18 +151,25 @@ public class QuizActivity extends AppCompatActivity {
             score++;
             String scr = "Score: " + score;
             textViewScore.setText(scr);
+            correctAnswer = true;
         }
 
-        showSolution();
+        showSolution(correctAnswer);
     }
 
-    private void showSolution() {
+    private void showSolution(boolean correctAnswer) {
 //        rb1.setTextColor(Color.RED);
 //        rb2.setTextColor(Color.RED);
 //        rb3.setTextColor(Color.RED);
 
-        String ans = "Answer is " + mCorrectAnswer;
-        textViewAnswer.setText(ans);
+        if (correctAnswer) {
+            String ans = "Good Job!";
+            textViewAnswer.setText(ans);
+        }
+        else {
+            String ans = "Nice try! The answer is " + mCorrectAnswer;
+            textViewAnswer.setText(ans);
+        }
 //        switch (currentQuestion.getAnswerNr()) {
 
 //            case 1:
