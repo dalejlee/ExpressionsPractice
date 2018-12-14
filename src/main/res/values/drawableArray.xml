@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <integer-array name="QuestionImages">
-        <item>@drawable/anger_4</item>
+        <item>@drawable/anger_1</item>
         <item>@drawable/happy_01</item>
         <item>@drawable/sad_01</item>
-        <item>@drawable/surprise_1</item>
+        <!--<item>@drawable/surprise_1</item>-->
         <item>@drawable/happy_10</item>
         <item>@drawable/surprise_10</item>
         <!--<item>@drawable/sad_10</item>-->
@@ -17,7 +17,7 @@
         <item>@drawable/surprise_11</item>
         <item>@drawable/happy_11</item>
 
-        <item>@drawable/surprise_12</item>
+        <!--<item>@drawable/surprise_12</item>-->
         <item>@drawable/sad_3</item>
         <item>@drawable/anger_3</item>
         <item>@drawable/happy_12</item>

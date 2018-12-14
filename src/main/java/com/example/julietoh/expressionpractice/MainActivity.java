@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.preference.PreferenceManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -41,6 +42,8 @@ public class MainActivity extends AppCompatActivity implements Detector.FaceList
     private QuestionsLibrary mQuestionsLibrary;
     private ImageView questionImageView;
     private String mCorrectAnswer;
+    CountDownTimer cTimer = null;
+    boolean timerInProgress = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,15 +55,31 @@ public class MainActivity extends AppCompatActivity implements Detector.FaceList
         checkForCameraPermissions();
         determineCameraAvailability();
         initializeCameraDetector();
+        // remove !!
+        detector.start();
         updateQuestion();
-        Timer timer = new Timer();
+        //start timer function
+
+    }
+
+    void startTimer() {
+        cTimer = new CountDownTimer(3000, 1000) {
+            public void onTick(long millisUntilFinished) {
+            }
+            public void onFinish() {
+                updateQuestion();
+                timerInProgress = false;
+            }
+        };
+        cTimer.start();
+        timerInProgress = true;
     }
 
     /**
      * Displays next question
      */
     private void updateQuestion() {
-        detector.start();
+        detector.reset();
         questionImageView.setBackgroundResource(mQuestionsLibrary.getQuestion(mQuestionNumber));
         mCorrectAnswer = mQuestionsLibrary.getCorrectAnswer(mQuestionNumber);
         mQuestionNumber++;
@@ -133,12 +152,16 @@ public class MainActivity extends AppCompatActivity implements Detector.FaceList
 
     @Override
     public void onImageResults(List<Face> faces, Frame image, float timestamp) {
-        //The follow code sample shows an example of how to retrieve metric values from the Face object
         if (faces == null)
             return; //frame was not processed
 
         if (faces.size() == 0)
             return; //no face found
+
+        // Don't check for correct facial expression if new question hasn't been asked
+        if (timerInProgress) {
+            return;
+        }
 
         Face face = faces.get(0);
         int faceId = face.getId();
@@ -167,47 +190,57 @@ public class MainActivity extends AppCompatActivity implements Detector.FaceList
         //emotionTextView.setText(displayString);
 
         // Check for correct emotion
-        switch(mCorrectAnswer) {
-            case "happy":
-                if (joy > 95 && smile > 90 && disgust < 1 && anger < 1) {
-                    Toast toast = Toast.makeText(this,"Correct! Expression is happy.",
-                            Toast.LENGTH_SHORT);
-                    toast.setGravity(Gravity.TOP, 0, 0);
-                    toast.show();
-                    detector.stop();
-                    updateQuestion();
+        if (!timerInProgress) {
+            switch (mCorrectAnswer) {
+                case "happy":
+                    if (joy > 95 && smile > 90 && disgust < 1 && anger < 1) {
+                        mScore++;
+                        startTimer();
+                        Toast toast = Toast.makeText(this, "Correct! Expression is happy.",
+                                Toast.LENGTH_SHORT);
+                        toast.setGravity(Gravity.CENTER, 0, 0);
+                        toast.show();
+                        //detector.stop();
+                        // updateQuestion();
+                    }
                     break;
-                }
-            case "sad":
-                if ((sadness > 20 && joy < 10) || (disgust > 50  && joy < 10)) {
-                    Toast toast = Toast.makeText(this,"Correct! Expression is sad.",
-                            Toast.LENGTH_SHORT);
-                    toast.setGravity(Gravity.TOP, 0, 0);
-                    toast.show();
-                    detector.stop();
-                    updateQuestion();
+                case "sad":
+                    if ((sadness > 20 && joy < 10) || (disgust > 50 && joy < 10)) {
+                        mScore++;
+                        startTimer();
+                        Toast toast = Toast.makeText(this, "Correct! Expression is sad.",
+                                Toast.LENGTH_SHORT);
+                        toast.setGravity(Gravity.CENTER, 0, 0);
+                        toast.show();
+                        // detector.stop();
+                        // updateQuestion();
+                    }
                     break;
-                }
-            case "surprise":
-                if (surprise > 20) {
-                    Toast toast = Toast.makeText(this,"Correct! Expression is surprise.",
-                            Toast.LENGTH_SHORT);
-                    toast.setGravity(Gravity.TOP, 0, 0);
-                    toast.show();
-                    detector.stop();
-                    updateQuestion();
+                case "surprise":
+                    if (surprise > 20) {
+                        mScore++;
+                        startTimer();
+                        Toast toast = Toast.makeText(this, "Correct! Expression is surprise.",
+                                Toast.LENGTH_SHORT);
+                        toast.setGravity(Gravity.CENTER, 0, 0);
+                        toast.show();
+                        //  detector.stop();
+                        // updateQuestion();
+                    }
                     break;
-                }
-            case "anger":
-                if (anger > 20  && joy < 10 ) {
-                    Toast toast = Toast.makeText(this,"Correct! Expression is anger.",
-                            Toast.LENGTH_SHORT);
-                    toast.setGravity(Gravity.TOP, 0, 0);
-                    toast.show();
-                    detector.stop();
-                    updateQuestion();
+                case "anger":
+                    if (anger > 20 && joy < 10) {
+                        startTimer();
+                        Toast toast = Toast.makeText(this, "Correct! Expression is anger.",
+                                Toast.LENGTH_SHORT);
+                        toast.setGravity(Gravity.CENTER, 0, 0);
+                        toast.show();
+                        //detector.reset();
+                        mScore++;
+                        //updateQuestion();
+                    }
                     break;
-                }
+            }
         }
 
         // Reached last question
