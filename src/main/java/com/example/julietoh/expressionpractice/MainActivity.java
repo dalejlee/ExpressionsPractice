@@ -3,6 +3,7 @@ package com.example.julietoh.expressionpractice;
 import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements Detector.FaceList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         initializeUI();
         mQuestionsLibrary = new QuestionsLibrary(this);
         checkForCameraPermissions();
