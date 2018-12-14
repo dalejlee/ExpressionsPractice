@@ -55,10 +55,8 @@ public class MainActivity extends AppCompatActivity implements Detector.FaceList
         checkForCameraPermissions();
         determineCameraAvailability();
         initializeCameraDetector();
-        // remove !!
         detector.start();
         updateQuestion();
-        //start timer function
 
     }
 
@@ -147,7 +145,6 @@ public class MainActivity extends AppCompatActivity implements Detector.FaceList
         detector.setImageListener(this);
         detector.setDetectAllExpressions(true);
         detector.setDetectAllEmotions(true);
-        // detector.setOnCameraEventListener(this);
     }
 
     @Override
@@ -164,13 +161,11 @@ public class MainActivity extends AppCompatActivity implements Detector.FaceList
         }
 
         Face face = faces.get(0);
-        int faceId = face.getId();
 
         //Get Emotions
         float joy = face.emotions.getJoy();
         float anger = face.emotions.getAnger();
         float disgust = face.emotions.getDisgust();
-        float fear = face.emotions.getFear();
         float sadness = face.emotions.getSadness();
         float surprise = face.emotions.getSurprise();
 
@@ -179,70 +174,51 @@ public class MainActivity extends AppCompatActivity implements Detector.FaceList
         float brow_furrow = face.expressions.getBrowFurrow();
         float brow_raise = face.expressions.getBrowRaise();
         float mouth_open = face.expressions.getMouthOpen();
-        float lips_downturned = face.expressions.getLipCornerDepressor();
-
-        // For testing purposes
-        String displayString = getString(R.string.emotions_values,
-                joy,
-                anger,
-                disgust,
-                fear,
-                sadness);
-        //emotionTextView.setText(displayString);
 
         // Check for correct emotion
-        if (!timerInProgress) {
-            switch (mCorrectAnswer) {
-                case "happy":
-                    if (joy > 95 && smile > 90) {
-                        mScore++;
-                        startTimer();
-                        Toast toast = Toast.makeText(this, "Correct! Expression is happy.",
-                                Toast.LENGTH_SHORT);
-                        toast.setGravity(Gravity.CENTER, 0, 0);
-                        toast.show();
-                        //detector.stop();
-                        // updateQuestion();
-                    }
-                    break;
-                case "sad":
-                    if ((sadness > 20) || (disgust > 50 && joy < 10)) {
-                        mScore++;
-                        startTimer();
-                        Toast toast = Toast.makeText(this, "Correct! Expression is sad.",
-                                Toast.LENGTH_SHORT);
-                        toast.setGravity(Gravity.CENTER, 0, 0);
-                        toast.show();
-                        // detector.stop();
-                        // updateQuestion();
-                    }
-                    break;
-                case "surprise":
-                    if (surprise > 10 || mouth_open > 15 || brow_raise > 25) {
-                        mScore++;
-                        startTimer();
-                        Toast toast = Toast.makeText(this, "Correct! Expression is surprise.",
-                                Toast.LENGTH_SHORT);
-                        toast.setGravity(Gravity.CENTER, 0, 0);
-                        toast.show();
-                        //  detector.stop();
-                        // updateQuestion();
-                    }
-                    break;
-                case "anger":
-                    if (anger > 15 || brow_furrow > 10) {
-                        startTimer();
-                        Toast toast = Toast.makeText(this, "Correct! Expression is anger.",
-                                Toast.LENGTH_SHORT);
-                        toast.setGravity(Gravity.CENTER, 0, 0);
-                        toast.show();
-                        //detector.reset();
-                        mScore++;
-                        //updateQuestion();
-                    }
-                    break;
-            }
+        switch (mCorrectAnswer) {
+            case "happy":
+                if (joy > 95 && smile > 90) {
+                    mScore++;
+                    startTimer();
+                    Toast toast = Toast.makeText(this, "Correct! Expression is happy.",
+                            Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
+                }
+                break;
+            case "sad":
+                if ((sadness > 20) || (disgust > 50 && joy < 10)) {
+                    mScore++;
+                    startTimer();
+                    Toast toast = Toast.makeText(this, "Correct! Expression is sad.",
+                            Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
+                }
+                break;
+            case "surprise":
+                if (surprise > 10 || mouth_open > 15 || brow_raise > 25) {
+                    mScore++;
+                    startTimer();
+                    Toast toast = Toast.makeText(this, "Correct! Expression is surprise.",
+                            Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
+                }
+                break;
+            case "anger":
+                if (anger > 15 || brow_furrow > 10) {
+                    mScore++;
+                    startTimer();
+                    Toast toast = Toast.makeText(this, "Correct! Expression is anger.",
+                            Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
+                }
+                break;
         }
+
 
         // Reached last question
         if (mQuestionNumber == 62) {
