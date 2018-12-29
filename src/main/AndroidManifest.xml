@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".StartScreen"> </activity>
-        <activity android:name=".QuizActivity"></activity>
+        <activity android:name=".IdentifyActivity"></activity>
         <activity android:name=".MainActivity">
             <!--<intent-filter>-->
                 <!--<action android:name="android.intent.action.MAIN" />-->

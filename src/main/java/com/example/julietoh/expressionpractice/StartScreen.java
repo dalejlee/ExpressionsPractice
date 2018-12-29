@@ -26,7 +26,7 @@ public class StartScreen extends AppCompatActivity {
 
     }
     private void startQuiz() {
-        Intent intent = new Intent(StartScreen.this, QuizActivity.class);
+        Intent intent = new Intent(StartScreen.this, IdentifyActivity.class);
         startActivity(intent);
     }
 }
