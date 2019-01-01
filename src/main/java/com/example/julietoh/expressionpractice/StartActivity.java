@@ -19,8 +19,10 @@ public class StartActivity extends AppCompatActivity {
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         Button buttonID = findViewById(R.id.button_identification);
         Button buttonIM= findViewById(R.id.button_imitation);
+        Button buttonSC= findViewById(R.id.button_scenario);
         final Intent intentQuiz = new Intent(this, StartScreen.class);
         final Intent intentMain = new Intent(this, MainActivity.class);
+        final Intent intentScenario = new Intent(this, MainActivityScenario.class);
         buttonID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -31,6 +33,12 @@ public class StartActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(intentMain);
+            }
+        });
+        buttonSC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intentScenario);
             }
         });
     }
