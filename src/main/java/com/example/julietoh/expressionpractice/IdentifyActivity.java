@@ -117,7 +117,7 @@ public class IdentifyActivity extends AppCompatActivity {
 
         if (answr.compareTo(mCorrectAnswer) == 0) {
             score++;
-            String scr = "Score: " + score;
+            String scr = "Score: " + score + "/36";
             tvScore.setText(scr);
 
             String ans = "Good Job!";

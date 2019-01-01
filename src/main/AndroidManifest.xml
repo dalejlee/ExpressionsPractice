@@ -31,6 +31,7 @@
                 <!--<category android:name="android.intent.category.LAUNCHER" />-->
             <!--</intent-filter>-->
         </activity>
+        <activity android:name=".MainActivityScenario"> </activity>
         <activity android:name=".ResultActivity"> </activity>
         <activity android:name=".ScoreActivity"> </activity>
     </application>
