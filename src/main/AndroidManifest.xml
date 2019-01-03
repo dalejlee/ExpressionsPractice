@@ -24,14 +24,14 @@
         </activity>
         <activity android:name=".StartScreen"> </activity>
         <activity android:name=".IdentifyActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".ImitationActivity">
             <!--<intent-filter>-->
                 <!--<action android:name="android.intent.action.MAIN" />-->
 
                 <!--<category android:name="android.intent.category.LAUNCHER" />-->
             <!--</intent-filter>-->
         </activity>
-        <activity android:name=".MainActivityScenario"> </activity>
+        <activity android:name=".ScenarioActivity"> </activity>
         <activity android:name=".ResultActivity"> </activity>
         <activity android:name=".ScoreActivity"> </activity>
     </application>

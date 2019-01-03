@@ -26,7 +26,7 @@ import com.affectiva.android.affdex.sdk.detector.Face;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements Detector.FaceListener, Detector.ImageListener {
+public class ImitationActivity extends AppCompatActivity implements Detector.FaceListener, Detector.ImageListener {
 
     // Variables for checking emotion
     private static final int CAMERA_PERMISSIONS_REQUEST = 42;  //value is arbitrary (between 0 and 255)

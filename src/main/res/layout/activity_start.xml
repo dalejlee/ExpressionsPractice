@@ -33,17 +33,17 @@
             android:text="Identification" />
 
         <Button
-            android:id="@+id/button_scenario"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Scenario" />
-
-        <Button
             android:id="@+id/button_imitation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Imitation" />
+
+        <Button
+            android:id="@+id/button_scenario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Scenario" />
     </LinearLayout>
 </RelativeLayout>
