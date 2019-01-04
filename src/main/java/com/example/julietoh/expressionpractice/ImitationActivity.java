@@ -79,7 +79,7 @@ public class ImitationActivity extends AppCompatActivity implements Detector.Fac
      * Displays next question
      */
     private void updateQuestion() {
-        if (mQuestionNumber == 36) {
+        if (mQuestionNumber == 20) {
             detector.stop();
             Intent intent = new Intent(this, ScoreActivity.class);
             intent.putExtra("SCORE", mScore);

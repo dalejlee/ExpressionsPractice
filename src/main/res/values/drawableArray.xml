@@ -4,17 +4,14 @@
         <item>@drawable/anger_1</item>
         <item>@drawable/happy_01</item>
         <item>@drawable/sad_01</item>
-        <item>@drawable/surprise_11</item>
 
         <item>@drawable/happy_2</item>
-        <item>@drawable/anger_2</item>
         <item>@drawable/surprise_2</item>
         <item>@drawable/sad_2</item>
 
         <item>@drawable/sad_3</item>
         <item>@drawable/anger_3</item>
         <item>@drawable/happy_3</item>
-        <item>@drawable/surprise_3</item>
 
         <item>@drawable/anger_4</item>
         <item>@drawable/happy_4</item>
@@ -27,23 +24,9 @@
         <item>@drawable/surprise_5</item>
 
         <item>@drawable/happy_6</item>
-        <item>@drawable/surprise_6</item>
-        <item>@drawable/anger_6</item>
         <item>@drawable/sad_6</item>
 
         <item>@drawable/surprise_7</item>
-        <item>@drawable/sad_7</item>
-        <item>@drawable/anger_7</item>
-        <item>@drawable/happy_7</item>
 
-        <item>@drawable/happy_8</item>
-        <item>@drawable/sad_8</item>
-        <item>@drawable/anger_8</item>
-        <item>@drawable/surprise_8</item>
-
-        <item>@drawable/angry_5</item>
-        <item>@drawable/happy_9</item>
-        <item>@drawable/sad_9</item>
-        <item>@drawable/surprise_9</item>
     </integer-array>
 </resources>

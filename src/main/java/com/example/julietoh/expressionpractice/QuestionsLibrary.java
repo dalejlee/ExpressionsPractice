@@ -8,16 +8,15 @@ import android.content.res.TypedArray;
  */
 
 public class QuestionsLibrary {
+
     private String[] mCorrectAnswer = {
-            "anger", "happy", "sad", "surprise",
-        "happy", "anger", "surprise", "sad",
-            "sad", "anger", "happy", "surprise",
-        "anger", "happy", "surprise", "sad",
-        "anger", "sad", "happy", "surprise",
-        "happy", "surprise", "anger", "sad",
-        "surprise", "sad!", "anger", "happy",
-        "happy", "sad", "anger", "surprise",
-            "anger", "happy", "sad", "surprise" };
+            "anger", "happy", "sad",
+            "happy", "surprise", "sad",
+            "sad", "anger", "happy",
+            "anger", "happy", "surprise", "sad",
+            "anger", "sad", "happy", "surprise",
+            "happy", "sad",
+            "surprise" };
 
     private TypedArray mImageLibrary;
 
