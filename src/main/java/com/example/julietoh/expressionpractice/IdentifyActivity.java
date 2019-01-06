@@ -11,6 +11,9 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * Created by dalelee.
+ */
 
 public class IdentifyActivity extends AppCompatActivity {
     private TextView tvAnswer;
@@ -20,10 +23,10 @@ public class IdentifyActivity extends AppCompatActivity {
     private RadioButton button2;
     private RadioButton button3;
     private RadioButton button4;
-    private RadioButton button5;
-    private RadioButton button6;
+//    private RadioButton button5;
+//    private RadioButton button6;
     private Button nextButton;
-    private Button homeButton;
+//    private Button homeButton;
 
     // variables for question
     private int mQuestionNumber = 0;
@@ -47,13 +50,13 @@ public class IdentifyActivity extends AppCompatActivity {
         button2 = findViewById(R.id.radioButton2);
         button3 = findViewById(R.id.radioButton3);
         button4 = findViewById(R.id.radioButton4);
-        button5 = findViewById(R.id.radioButton5);
-        button6 = findViewById(R.id.radioButton6);
+//        button5 = findViewById(R.id.radioButton5);  // removed disgust
+//        button6 = findViewById(R.id.radioButton6);  // removed fearful
         nextButton = findViewById(R.id.button_confirm_next);
         mQuestionsLibrary = new QuestionsLibrary(this);
         questionImageView = findViewById(R.id.emotion_image);
 
-        homeButton = findViewById(R.id.home_button);
+//        homeButton = findViewById(R.id.home_button);
         // return to home screen TODO
 //        homeButton.setOnClickListener(new View.OnClickListener() {
 //            public void onClick(View v) {
@@ -67,7 +70,7 @@ public class IdentifyActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (!attempted) {
-                    if (button1.isChecked() || button2.isChecked() || button3.isChecked() || button4.isChecked() || button5.isChecked() || button6.isChecked()) {
+                    if (button1.isChecked() || button2.isChecked() || button3.isChecked() || button4.isChecked()) {
                         cAnswer();
                     } else {
                         Toast.makeText(IdentifyActivity.this, "Pick your best guess!", Toast.LENGTH_SHORT).show();
@@ -100,24 +103,24 @@ public class IdentifyActivity extends AppCompatActivity {
             answr = "anger";
         }
         if (answrNum == 1) {
-            answr = "fearful";
-        }
-        if (answrNum == 2) {
             answr = "surprise";
         }
-        if (answrNum == 3) {
+        if (answrNum == 2) {
             answr = "sad";
         }
-        if (answrNum == 4) {
-            answr = "disgust";
-        }
-        if (answrNum == 5) {
+        if (answrNum == 3) {
             answr = "happy";
         }
+//        if (answrNum == 4) {
+//            answr = "disgust";
+//        }
+//        if (answrNum == 5) {
+//            answr = "happy";
+//        }
 
         if (answr.compareTo(mCorrectAnswer) == 0) {
             score++;
-            String scr = "Score: " + score + "/36";
+            String scr = "Score: " + score + "/20";
             tvScore.setText(scr);
 
             String ans = "Good Job!";
@@ -125,7 +128,7 @@ public class IdentifyActivity extends AppCompatActivity {
         }
 
         else {
-            String scr = "Score: " + score + "/36";
+            String scr = "Score: " + score + "/20";
             tvScore.setText(scr);
 
             String ans = "Try again! The answer is " + mCorrectAnswer;

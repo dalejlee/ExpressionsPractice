@@ -85,7 +85,7 @@ public class ImitationActivity extends AppCompatActivity implements Detector.Fac
             intent.putExtra("SCORE", mScore);
             startActivity(intent);
         }
-        score_text.setText("Score " + mScore + "/36");
+        score_text.setText("Score " + mScore + "/20");
         detector.reset();
         questionImageView.setBackgroundResource(mQuestionsLibrary.getQuestion(mQuestionNumber));
         mCorrectAnswer = mQuestionsLibrary.getCorrectAnswer(mQuestionNumber);

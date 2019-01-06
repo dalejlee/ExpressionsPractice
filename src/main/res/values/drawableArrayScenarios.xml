@@ -2,29 +2,18 @@
 <resources>
     <integer-array name="QuestionImagesScenario">
         <item>@drawable/anger_scenario_1</item>
-        <item>@drawable/happy_scenario_1</item>
         <item>@drawable/sad_scenario_1</item>
-        <item>@drawable/surprise_scenario_1</item>
 
         <item>@drawable/happy_scenario_2</item>
-        <item>@drawable/anger_scenario_2</item>
-        <item>@drawable/surprise_scenario_2</item>
-        <item>@drawable/sad_scenario_2</item>
 
         <item>@drawable/sad_scenario_3</item>
-        <item>@drawable/anger_scenario_3</item>
         <item>@drawable/happy_scenario_3</item>
-        <item>@drawable/surprise_scenario_3</item>
 
         <item>@drawable/anger_scenario_4</item>
         <item>@drawable/happy_scenario_4</item>
         <item>@drawable/surprise_scenario_4</item>
-        <item>@drawable/sad_scenario_4</item>
 
-        <item>@drawable/anger_scenario_5</item>
-        <item>@drawable/sad_scenario_5</item>
-        <item>@drawable/happy_scenario_5</item>
-        <item>@drawable/surprise_scenario_5</item>
+        <item>@drawable/happy_scenario_1</item>
 
         <item>@drawable/happy_scenario_6</item>
         <item>@drawable/surprise_scenario_6</item>
@@ -33,17 +22,12 @@
 
         <item>@drawable/surprise_scenario_7</item>
         <item>@drawable/sad_scenario_7</item>
-        <item>@drawable/anger_scenario_7</item>
-        <item>@drawable/happy_scenario_7</item>
 
-        <item>@drawable/happy_scenario_8</item>
-        <item>@drawable/sad_scenario_8</item>
-        <item>@drawable/anger_scenario_8</item>
         <item>@drawable/surprise_scenario_8</item>
 
         <item>@drawable/anger_scenario_10</item>
         <item>@drawable/happy_scenario_9</item>
-        <item>@drawable/sad_scenario_9</item>
+        <item>@drawable/sad_scenario_10</item>
         <item>@drawable/surprise_scenario_9</item>
     </integer-array>
 </resources>

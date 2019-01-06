@@ -6,15 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".IdentifyActivity">
 
-    <!--<ImageView-->
-        <!--android:id="@+id/imageView"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--tools:layout_editor_absoluteX="34dp"-->
-        <!--tools:layout_editor_absoluteY="64dp"-->
-        <!--tools:srcCompat="@tools:sample/avatars[0]" />-->
-
     <LinearLayout
         android:id="@+id/question"
         android:layout_width="match_parent"
@@ -65,16 +56,16 @@
             android:text="Angry"
             />
 
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fearful"
-            tools:layout_editor_absoluteX="175dp"
-            tools:layout_editor_absoluteY="383dp" />
+        <!--<RadioButton-->
+            <!--android:id="@+id/radioButton2"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Fearful"-->
+            <!--tools:layout_editor_absoluteX="175dp"-->
+            <!--tools:layout_editor_absoluteY="383dp" />-->
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/radioButton2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Surprised"
@@ -82,23 +73,23 @@
             tools:layout_editor_absoluteY="348dp" />
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/radioButton3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sad"
             tools:layout_editor_absoluteX="41dp"
             tools:layout_editor_absoluteY="383dp" />
 
-        <RadioButton
-            android:id="@+id/radioButton5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Disgust"
-            tools:layout_editor_absoluteX="175dp"
-            tools:layout_editor_absoluteY="418dp" />
+        <!--<RadioButton-->
+            <!--android:id="@+id/radioButton5"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Disgust"-->
+            <!--tools:layout_editor_absoluteX="175dp"-->
+            <!--tools:layout_editor_absoluteY="418dp" />-->
 
         <RadioButton
-            android:id="@+id/radioButton6"
+            android:id="@+id/radioButton4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Happy"
@@ -112,11 +103,17 @@
         android:id="@+id/text_view_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Score: 0"
+        android:text="Score: 0/20"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
 
-    <Button
+    <RelativeLayout
+        android:id="@+id/InnerRelativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+
+        <Button
         android:id="@+id/button_confirm_next"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -124,12 +121,14 @@
         android:layout_marginTop="16dp"
         android:text="Confirm" />
 
-    <Button
-        android:id="@+id/home_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:text="Home"
-        />
+    </RelativeLayout>
+
+    <!--<Button-->
+        <!--android:id="@+id/home_button"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:text="Home"-->
+        <!--/>-->
 
 </RelativeLayout>

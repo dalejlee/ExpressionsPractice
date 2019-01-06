@@ -33,6 +33,6 @@ public class ScoreActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        resultTextView.setText(score + "/36");
+        resultTextView.setText(score + "/20");
     }
 }
